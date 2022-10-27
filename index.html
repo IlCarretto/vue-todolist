@@ -23,17 +23,16 @@
             <header>
                 <h1 id="title">To Do List</h1>
                 
-                <div class="add-task">
                     <label for="add-task"><h3>Inserisci una task</h3></label>
-                    <input type="text" id="add-task">
-                    <button id="task-btn">add</button>
-                </div>
+                    <input type="text" id="add-task" @keyup.enter="addNewTask" v-model.trim="newTask">
+                    <!-- <div v-if="addNewTask" class="warning">La task deve avere almeno 5 caratteri!</div> -->
+                    <button id="task-btn" @click="addNewTask">Add</button>
             </header>
             <main>
                 <ul id="task-list">
-                    <li for="(task, index) in tasks">
-                        <span>{{task.text}}</span>
-                        <span class="cancel">{{task.cancel}}</span>
+                    <li v-for="(task, index) in tasks">
+                        <span @click="task.done = !task.done" :class=" task.done === false ? '' : 'task-done'">{{task.text}}</span>
+                        <span class="cancel" @click="removeTask(index)">&cross;</span>
                     </li>
                 </ul>
             </main>

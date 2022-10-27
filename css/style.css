@@ -51,22 +51,29 @@ main {
 }
 
 #task-list {
-    width: 100%;
-    padding: 0 1rem;
-    list-style-type: decimal;
     margin-top: 2rem;
-    border: 1px solid lightblue;
-    border-radius: 5px;
 }
 
 #task-list li {
-    padding: .5rem 0;
+    padding: .5rem .5rem;
+    margin-bottom: .5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: lightblue;
+    border-radius: 20px;
+    list-style-type: decimal;
 }
 
 .cancel {
     color: red;
     font-size: 1.4rem;
+}
+
+.task-done {
+    text-decoration: line-through;
+}
+
+.warning {
+    color: red;
 }

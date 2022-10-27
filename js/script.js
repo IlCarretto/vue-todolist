@@ -3,31 +3,36 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
+            newTask: "",
             tasks: [
                 {
                     text: "Fare esercizio",
-                    cancel: "&#x2717;",
                     done: false
                 },
                 {
                     text: "Mettere a posto camera",
-                    cancel: "&#x2717;",
                     done: false
                 },
                 {
                     text: "Fare la spesa",
-                    cancel: "&#x2717;",
                     done: false
                 },
                 {
                     text: "Programmare",
-                    cancel: "&#x2717;",
                     done: false
-                }
+                },
             ]
         }
     },
     methods: {
-
+        addNewTask() {
+            if (this.newTask.length >= 5) {
+                this.tasks.push({text:this.newTask, done:false});
+                this.newTask = "";
+            }
+        },
+        removeTask(indexOfTask) {
+            this.tasks.splice(indexOfTask, 1);
+        }
     }
 }).mount("#app");
