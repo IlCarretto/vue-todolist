@@ -1,0 +1,25 @@
+div {
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 10rem;
+    font-size: 10rem;
+}
+
+#title {
+    font-size: 10rem;
+    text-align: center;
+}
+
+.remove {
+    display: none;
+}
+
+.show {
+    display: block;
+}
