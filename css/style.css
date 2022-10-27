@@ -1,25 +1,71 @@
-div {
-    height: 800px;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    font-family: 'Fuzzy Bubbles', cursive;
+}
+/* COMMON */
+body {
+    background-image: url(../img/wallpaper.jpg);
+}
+
+.container {
+    max-width: 600px;
+    min-height: 600px;
+    background-color: white;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 5rem;
+    box-shadow: 0 0 5px 5px lightblue;
 }
-
-button {
-    padding: 10rem;
-    font-size: 10rem;
-}
-
-#title {
-    font-size: 10rem;
+/* HEADER */
+header {
+    height: 100px;
     text-align: center;
 }
 
-.remove {
-    display: none;
+#title {
+    padding-top: 1rem;
 }
 
-.show {
-    display: block;
+#add-task {
+    padding: .5rem;
+}
+
+#task-btn {
+    padding: .4rem;
+    font-size: 1rem;
+}
+
+/* MAIN */
+main {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#task-list {
+    width: 100%;
+    padding: 0 1rem;
+    list-style-type: decimal;
+    margin-top: 1rem;
+    border: 1px solid lightblue;
+}
+
+#task-list li {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cancel {
+    color: red;
+    font-size: 1.4rem;
 }
