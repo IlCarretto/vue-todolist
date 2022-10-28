@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             newTask: "",
+            error: false,
             tasks: [
                 {
                     text: "Fare esercizio",
@@ -11,7 +12,7 @@ createApp({
                 },
                 {
                     text: "Mettere a posto camera",
-                    done: false
+                    done: true
                 },
                 {
                     text: "Fare la spesa",
@@ -29,6 +30,9 @@ createApp({
             if (this.newTask.length >= 5) {
                 this.tasks.push({text:this.newTask, done:false});
                 this.newTask = "";
+                this.error = false;
+            } else {
+                this.error = true;
             }
         },
         removeTask(indexOfTask) {
